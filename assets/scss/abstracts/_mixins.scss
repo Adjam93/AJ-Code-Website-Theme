@@ -1,0 +1,112 @@
+/*Screen sizes at 400px or larger*/
+@mixin atExtraSmall {
+
+    @media (min-width: 25em) {
+        @content;
+    }
+
+}
+
+/*Screen sizes at 528px or larger*/
+@mixin atSmall {
+
+    @media (min-width: 33em) {
+        @content;
+    }
+
+}
+
+/*800px or larger*/
+@mixin atMedium {
+
+    @media (min-width: 50em) {
+        @content;
+    }
+
+}
+
+/*1010px or larger*/
+@mixin atLarge {
+
+    @media (min-width: 65em) {
+        @content;
+    }
+
+}
+  
+@mixin containerWidth{
+    width: min(100% - 2rem, 1200px);
+    margin-inline: auto;
+}
+
+@mixin link-hover( $width, $margin-lt ) {
+
+    &:after{
+        background: #dcdcdc;
+        position: absolute;
+        bottom: 0px;
+        content: "";
+        display: inline-block;
+        height: 1px;
+        left: 0;
+        overflow: hidden;
+        width: 0;
+        opacity: 0;
+        transition: all 500ms cubic-bezier(0.173, 0.883, 0.3, 1.073) 0s;
+    }
+
+
+    &:hover:after{
+        width: $width;
+        opacity: 1;
+        color: #dcdcdc;
+        margin-left: $margin-lt;
+    }
+    
+}
+
+@mixin read-more-arrow($margin-lt, $margin-rt) {
+
+    font-size: 1.3rem;
+    line-height: 0;
+    margin-left: $margin-lt;
+    margin-right: #{$margin-rt};
+    transition: all 0.7s;
+    font-family: Arial, sans-serif;
+    
+}
+
+@mixin socials {
+
+    .socials{
+        display: flex;
+        flex-wrap: wrap; 
+        justify-content: center;
+
+        img {
+            height: 64px;
+            width: 64px;
+        }
+        
+        a {
+            color: var(--medium-blue);
+            text-decoration: none;
+        }
+
+        .fab {
+            color: #fff;
+        }
+        
+    }
+    
+}
+
+@mixin heading-underline {
+    content: "";
+    display: block;
+    height: 2px;
+    background: var(--medium-blue);
+    text-align: center;
+    width: 55px;
+    margin-top: 10px;
+}

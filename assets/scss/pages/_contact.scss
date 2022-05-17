@@ -1,0 +1,111 @@
+@use '../abstracts/' as a;
+
+.contact-page-info{
+    margin-bottom: 40px;
+
+    p{
+        margin-bottom: 20px;
+    }
+}
+
+.contact-page{
+
+    display: flex;
+    flex-wrap: wrap-reverse;
+
+    .contact-page-form{
+
+        flex: 0 0 100%;
+        padding-right: 0;
+        border-right: none;
+
+        @include a.atLarge{
+            flex: 0 0 70%;
+            border-right: 2px solid #d4d4d4;
+            padding-right: 60px;
+        }
+   
+
+        .required{
+            background: var(--medium-blue);
+            color: #fff;
+            display: inline-block;
+            width: 100%;
+            padding: 8px 10px;
+            font-size: 1.1rem;
+        }
+    }
+
+    .contact-side-meta{
+
+        @include a.socials;
+
+        padding-left: 0;
+        @include a.atLarge{
+            padding-left: 2.5em;
+        }
+       
+
+        .socials{
+            justify-content: space-between;
+            flex-direction: row;
+            @include a.atLarge{
+                flex-direction: column;
+            }
+          
+
+            a{
+                margin-right: 2.8em;
+                @include a.atLarge{
+                    margin-right: 0;
+                }
+                margin-bottom: 2.8em;
+            }
+        }
+      
+
+    }
+
+}
+
+#cfx {
+    max-width: 100%;
+    padding: 0;
+}
+
+#cfx .cfx-before-form {
+     padding: 0 0 20px 0;
+}
+
+#cfx .cfx-input input, #cfx .cfx-textarea textarea{
+    width: 100%;
+    border-radius: 0;
+}
+
+#cfx .cfx-input input:focus, #cfx .cfx-input input:hover, #cfx .cfx-textarea textarea:focus, #cfx .cfx-textarea textarea:hover {
+    box-shadow: 0 0 5px 3px #a3a3a3;
+    border: none;
+    outline: none;
+}
+
+#cfx .cfx-success {
+    background: #4ebaaa;
+    padding: 10px 23px;
+    color: #fff;
+    border-left: none;
+}
+
+#cfx .cfx-button{
+    width: 100%;
+    background: var(--dark-blue);
+}
+#cfx .cfx-button:active {
+    background: var(--medium-blue);
+}
+.cfx-extra {
+    border-left: 8px var(--dark-blue) solid;
+    padding: 10px 15px;
+    margin-left: 1px;
+    background: var(--medium-blue);
+    color: #fff;
+}

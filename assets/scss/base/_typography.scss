@@ -1,0 +1,25 @@
+@use '../abstracts' as a;
+
+:root{
+
+    --fs-xl: clamp(2.25rem, 2vw + 1rem, 5rem);
+    --fs-large: 1.65rem;
+    --fs-medium: 1.125em;
+    --fs-base: 1rem;
+    --fs-small: 0.85rem;
+
+}
+
+body{
+    font-family: 'News Cycle', sans-serif;
+}
+
+@include a.atMedium{
+
+    :root{
+
+        --fs-large: 2rem;
+        --fs-medium: 1.25rem;
+        
+    }
+}

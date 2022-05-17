@@ -1,0 +1,41 @@
+@use '../abstracts' as a;
+
+.main-footer{
+    background: var(--dark-blue);
+    padding: 3.2em 0;
+}
+
+.inner-footer{
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 0 0.9em;
+
+    @include a.socials;
+
+
+    .footer-links{
+        font-size: 1.2rem;
+
+        ul{
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 1em;
+            padding: 0;
+
+            li{
+                a{
+                    color: #fff;
+                    position: relative;
+                    transition: 0.8s;
+                    @include a.link-hover(90%, 5%);
+                }
+            }
+        }
+    }
+}

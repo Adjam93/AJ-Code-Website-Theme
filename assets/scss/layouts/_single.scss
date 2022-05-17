@@ -1,0 +1,296 @@
+@use '../abstracts' as a;
+
+.single-post {
+
+    .container{
+        width: auto;
+    }
+    .page-wrapper {
+        padding: 0;
+    }
+
+}
+
+@include a.atLarge{
+
+    .single-post {
+
+        .container{
+            width: min(100% - 2rem,1200px);
+        }
+        .page-wrapper {
+            padding: 6em 0;
+        }
+    
+    }
+    
+    
+}
+
+.single-content{
+
+    margin: 70px auto 0 auto;
+    font-size: 1.15rem;
+
+    p{
+        margin-bottom: 20px;
+    }
+}
+
+article{
+
+    .top{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        @include a.atLarge{
+            flex-direction: row;
+        }
+    }
+
+    .header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex: 0 0 40%;
+        padding: 4em 2.25em 4em 2.25em;
+        background: var(--light-blue);
+    
+            h1{
+                margin-bottom: 1em;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                font-weight: 500;
+                font-size: 2rem;
+        
+                &:after{
+                    content: "";
+                    display: block;
+                    height: 2px;
+                    background: var(--medium-blue);
+                    text-align: center;
+                    width: 150px;
+                    margin-top: 30px;
+                }
+            }
+    
+            .author-meta{
+
+                display: flex;
+    
+                img{
+                    margin-right: 10px;
+                    border-radius: 50%;
+                }
+        
+                .author-details{
+                    display: flex;
+                    flex-direction: column;
+                }
+    
+            }
+    
+            .blog-categories{
+                display: flex;
+                flex-wrap: wrap;
+                margin-top: 20px;
+        
+                a{
+                    background: var(--dark-blue);
+                    color: #fff;
+                    padding: 5px 10px;
+                    margin: 5px 10px 5px 0;
+                }
+            }
+
+            
+    }
+
+    figure.featured-img {
+
+        margin-top: 0;
+        @include a.atLarge{
+            margin-top: -30px;
+        }
+        
+        box-shadow: 0 3px 5px rgba(0,0,0,.3);
+        text-align: right;
+        flex: 0 0 60%;
+
+        img {
+            height: 100%;
+            width: 100%;
+            vertical-align: middle;
+            object-fit: cover;
+        }
+    }
+
+    .main-content{
+
+        max-width: 100%;
+        @include a.atLarge{
+            max-width: 98%;
+        }
+       
+        font-size: 1.1rem;
+
+        padding: 3.5em 1.2em;
+        @include a.atLarge{
+            padding: 3.5em 2.25em;
+        }
+        
+        background: var(--light-blue);
+
+        h2 {
+            color: var(--medium-blue);
+            margin-bottom: 20px;
+            font-weight: 600;
+            font-size: 2rem;
+        }
+
+        p{
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+            line-height: 2;
+
+            a {
+                color: #4290b5;
+                text-decoration: underline;
+                font-weight: 700;
+            }
+            code {
+                padding: 0px 5px 2px;
+                background: #EEEEEE;
+                color: #4290b5;
+                border: 1px solid #b1b1b1;
+            }
+
+        }
+    
+        
+        ul{
+            padding-left: 20px;
+            li{
+                margin-bottom: 20px;
+
+                code {
+                    padding: 0px 5px 2px;
+                    background: #EEEEEE;
+                    color: #4290b5;
+                    border: 1px solid #b1b1b1;
+                }
+            }
+        }
+        
+        .wp-block-code{
+            background: var(--dark-blue);
+            color: #fff;
+            margin: 35px 0;
+    
+           code{
+                font-family: 'Inconsolata', monospace;
+
+                .token{
+                    font-family: 'Inconsolata', monospace;
+                }
+
+            }
+           
+        }
+
+    }
+}
+
+.wp-block-group.table-of-contents {
+    margin: 40px 0;
+    box-shadow: 12px -12px 0px 0px #c7c7c7;
+    display: inline-block;
+    padding: 15px 60px 15px 20px;
+    background: #0a2a39;
+    color: #fff;
+
+    h2 {
+        margin-bottom: 20px;
+        color: #fff;
+        font-size: 1.6rem;
+        border-bottom: 3px solid #fff;
+        display: inline-block;
+    }
+
+    ol {
+        margin-left: 20px;
+
+        li {
+            margin: 0 0 20px 0;
+
+            a {
+                color: #fff;
+                padding-left: 5px;
+                position: relative;
+                @include a.link-hover(100%, 2%);
+            }
+        }
+    }
+
+    ::marker {
+        color: #4fb6e6;
+        font-weight: 600;
+    }
+}
+
+
+.no-results{
+
+    h2{
+        font-size: 2.2rem;
+        padding: 0 16px 8px;
+        border-left: 8px solid var(--dark-blue);
+        background: var(--medium-blue);
+        color: #fff;
+        text-shadow: 3px 2px 5px #080808;
+    }
+}
+
+div.code-toolbar > .toolbar a, div.code-toolbar > .toolbar button, div.code-toolbar > .toolbar span {
+    font-size: 0.95rem;
+    padding: 5px 15px;
+    background: #f5f2f0;
+    background: rgba(224, 224, 224, 0.2);
+    box-shadow: none;
+    border-radius: 0;
+    background: #4290b5;
+    color: #fff;
+    display: flex;
+}
+
+div.code-toolbar > .toolbar > .toolbar-item > a, div.code-toolbar > .toolbar > .toolbar-item > button, div.code-toolbar > .toolbar > .toolbar-item > span{
+    background: transparent;
+    font-size: .95rem;
+    padding: 0 0.5em;
+}
+
+.wp-block-group.double-img-group{
+    
+    .wp-block-group__inner-container {
+        display: flex;
+        flex-direction: column;
+        @include a.atMedium{
+            flex-direction: row;
+        }
+        figure:first-child {
+            margin-right: 50px;
+        }
+
+        figure.align-bottom{
+            align-self: flex-end;
+        }
+    
+        figcaption{
+            padding: 10px;
+            background: #EEEEEE;
+            color: #4290b5;
+            border: 1px solid #b1b1b1;
+        }
+    }
+}

@@ -1,0 +1,100 @@
+@use '../abstracts' as a;
+
+.about-box-outer{
+
+    box-shadow: 0 0 4px 1px #c3c3c3;
+    margin-bottom: 4.5em;
+
+    .wp-block-group__inner-container {
+        display: flex;
+        flex-direction: column;
+        @include a.atLarge{
+            flex-direction: row;
+        }
+
+        .wp-block-image img {
+            height: 468px;
+            object-fit: cover;
+        }
+
+        .wp-block-cover{
+            flex: 0 0 50%;
+
+            min-height: 280px;
+
+            @include a.atSmall{
+                min-height: 350px;
+            }
+
+            @include a.atMedium{
+                min-height: 468px;
+            }
+
+            .wp-block-cover__inner-container{
+            
+                h2.has-text-align-center {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+        
+                    &:after{
+                        content: "";
+                        display: block;
+                        height: 2px;
+                        background: #fff;
+                        text-align: center;
+                        width: 50px;
+                        margin-top: 5px;
+                    }
+                }
+
+            }
+
+        }
+
+    }
+
+    .wp-block-group {
+        display: flex;
+        align-items: center;
+        padding: 1.8em 0;
+        @include a.atLarge{
+            padding: 0;
+        }
+
+        .wp-block-group__inner-container {
+            flex-direction: column;
+            padding: 0 30px;
+
+            h3 {
+                margin-bottom: 20px;
+            }
+            h4{
+                margin-bottom: 10px;
+            }
+
+            ul {
+                margin-left: 20px;
+            }
+        }
+    }
+
+    
+    &.reverse{
+        .wp-block-group__inner-container {
+
+            flex-direction: column;
+            @include a.atLarge{
+                flex-direction: row-reverse;
+            }
+         
+
+
+          .wp-block-group .wp-block-group__inner-container {
+                flex-direction: column;
+            }
+
+        }
+    }
+
+}

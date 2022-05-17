@@ -1,0 +1,17 @@
+@use '../abstracts' as a;
+
+.container{
+
+    @include a.containerWidth;
+
+}
+
+.page-wrapper {
+
+    padding: 4.8em 0;
+
+    @include a.atLarge{
+        padding: 6em 0;
+    }
+}
+   

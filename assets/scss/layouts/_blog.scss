@@ -1,0 +1,13 @@
+@use '../abstracts' as a;
+@forward '../components/blog-card';
+
+.blog-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(max(33%,220px), 1fr));
+    @include a.atSmall{
+        grid-template-columns: repeat(auto-fill, minmax(max(33%,350px), 1fr));
+    }
+    
+    column-gap: 6.5em;
+    row-gap: 4.5em;
+}

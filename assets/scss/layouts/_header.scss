@@ -1,0 +1,104 @@
+@use '../abstracts' as a;
+
+@forward '../components/mobile-menu';
+
+
+header{
+
+    img {
+        max-height: 55px;
+        align-self: center;
+    }
+    
+    @include a.atExtraSmall{
+        img {
+            max-height: 70px;
+        }
+    }
+
+   
+    width: 100%;
+    z-index: 99;
+    top: 0;
+    padding: 0;
+
+    @include a.atLarge{
+        padding: 0.9em 0;
+    }
+
+    background: var(--dark-blue);
+    transition: all 0.7s;
+}
+
+.home header{
+    background: transparent;
+    position: fixed;
+}
+
+.main-header.add-background{
+    background: var(--dark-blue);
+}
+
+.header-inner{
+
+    display: block;
+
+    @include a.atLarge{
+        display: flex;
+        @include a.containerWidth;
+    }
+  
+    margin: 0 auto;
+    justify-content: space-between;
+    height: 100%;
+
+    .site-identity {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 0.9em 1em;
+
+        @include a.atLarge{
+            width: auto;
+            padding: 0;
+        }
+
+    }
+
+    nav{
+        display: flex;
+        align-items: center;
+
+        ul{
+            display: none;
+            @include a.atLarge{
+                display: flex;
+            }
+            list-style: none;
+            flex-wrap: wrap;
+
+            li a{
+                color: #fff;
+                font-size: 1.25rem;
+                position: relative;
+                padding: 0 40px;
+                @include  a.link-hover(90%, 5%);
+            
+            }
+    
+            li.current-menu-item a{
+       
+                &:after{
+                    width: 100%;
+                    opacity: 1;
+                    color: #dcdcdc;
+                }
+            
+            }
+
+        }
+        
+    }
+    
+}
